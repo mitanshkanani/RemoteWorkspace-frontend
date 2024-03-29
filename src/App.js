@@ -1,25 +1,62 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+  Route,
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+} from "react-router-dom";
+
+// pages
+import Homepage from "./pages/Homepage";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+import Resources from "./pages/Resources";
+import Projects from "./pages/Projects";
+import Notes from "./pages/Notes";
+import Media from "./pages/Media";
+import Collaborators from "./pages/Collaborators";
+import Files from "./pages/Files";
+
+// layouts
+import RootLayout from "./layouts/RootLayout";
+import AccessLayout from "./layouts/AccessLayout";
+import ProjectsLayout from "./layouts/ProjectsLayout";
+import ResourcesLayout from "./layouts/ResourcesLayout";
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <>
+      <Route path="/" element={<RootLayout />}>
+
+        <Route index path="home" element={<Homepage />} />
+        <Route path="login" element={<Login />} />
+        <Route path="register" element={<Register />} />
+
+        <Route path="workspace" element={<AccessLayout />} >
+
+          <Route path="projects" element={<ProjectsLayout />} >
+            <Route index element={<Projects />} />
+            <Route path="collaborators" element={<Collaborators />} />
+          </Route>
+
+          <Route path="resources" element={<ResourcesLayout />} >
+            <Route index element={<Resources />} />
+            <Route path="files" element={<Files />} />
+          </Route>
+
+          <Route path="notes" element={<Notes />} />
+          <Route path="media" element={<Media />} />
+
+        </Route>
+
+      </ Route>
+    </>
+  )
+)
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <RouterProvider router={router} />
+  )
 }
 
 export default App;
