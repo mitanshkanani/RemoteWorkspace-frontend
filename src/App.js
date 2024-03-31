@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 // pages
-import Homepage from "./pages/Homepage";
+// import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Resources from "./pages/Resources";
@@ -27,10 +27,11 @@ import ResourcesLayout from "./layouts/ResourcesLayout";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      
-      <Route path="/" element={<Landing />}>
-        
-        <Route index path="home" element={<Homepage />} />
+
+      <Route index path="/" element={<Landing />} />
+
+      {/* <Route path="home" element={<Homepage />} /> */}
+      <Route path="home" element={<RootLayout />} >
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
 
@@ -50,8 +51,7 @@ const router = createBrowserRouter(
           <Route path="media" element={<Media />} />
 
         </Route>
-
-      </ Route>
+      </Route>
     </>
   )
 )

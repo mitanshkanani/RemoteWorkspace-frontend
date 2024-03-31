@@ -1,23 +1,23 @@
 import { Box } from "@mui/material";
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom"
 
 const Landing = () => {
   const [animationComplete, setAnimationComplete] = useState(false);
-  const history = useHistory();
+  const history = useNavigate();
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setAnimationComplete(true);
-    }, 3000); 
+    }, 3000);
     return () => clearTimeout(timer);
   }, []);
 
   useEffect(() => {
     if (animationComplete) {
       const nextPageTimer = setTimeout(() => {
-        history.push("/rootlayout"); 
-      }, 1000); 
+        history("/home");
+      }, 1000);
       return () => clearTimeout(nextPageTimer);
     }
   }, [animationComplete, history]);
