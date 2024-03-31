@@ -15,6 +15,7 @@ import Notes from "./pages/Notes";
 import Media from "./pages/Media";
 import Collaborators from "./pages/Collaborators";
 import Files from "./pages/Files";
+import Landing from "./pages/Landing";
 
 // layouts
 import RootLayout from "./layouts/RootLayout";
@@ -22,11 +23,13 @@ import AccessLayout from "./layouts/AccessLayout";
 import ProjectsLayout from "./layouts/ProjectsLayout";
 import ResourcesLayout from "./layouts/ResourcesLayout";
 
+
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
-      <Route path="/" element={<RootLayout />}>
-
+      
+      <Route path="/" element={<Landing />}>
+        
         <Route index path="home" element={<Homepage />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
