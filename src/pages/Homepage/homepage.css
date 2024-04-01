@@ -1,0 +1,20 @@
+.background {
+    background-color: #141414;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    height: 32rem;
+    width: 28.125rem;
+    border: 2px solid white;
+    border-radius: 2rem
+}
+
+hr {
+    width: 30%;
+    border-bottom: 2px solid #474747;
+}

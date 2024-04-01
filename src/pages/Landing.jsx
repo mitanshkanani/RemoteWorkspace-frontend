@@ -16,7 +16,7 @@ const Landing = () => {
   useEffect(() => {
     if (animationComplete) {
       const nextPageTimer = setTimeout(() => {
-        history("/home");
+        history("/action");
       }, 1000);
       return () => clearTimeout(nextPageTimer);
     }
@@ -41,7 +41,7 @@ const Landing = () => {
         <Box>
           <div
             style={{
-              fontFamily: "cursive",
+              fontFamily: "'La Belle Aurore', 'cursive'",
               fontSize: "60px",
               color: "purple",
               width: "600px",

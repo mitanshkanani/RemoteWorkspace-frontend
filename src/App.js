@@ -6,7 +6,7 @@ import {
 } from "react-router-dom";
 
 // pages
-// import Homepage from "./pages/Homepage";
+import Homepage from "./pages/Homepage/Homepage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Resources from "./pages/Resources";
@@ -22,6 +22,7 @@ import RootLayout from "./layouts/RootLayout";
 import AccessLayout from "./layouts/AccessLayout";
 import ProjectsLayout from "./layouts/ProjectsLayout";
 import ResourcesLayout from "./layouts/ResourcesLayout";
+import ActionPage from "./pages/ActionPage";
 
 
 const router = createBrowserRouter(
@@ -30,8 +31,9 @@ const router = createBrowserRouter(
 
       <Route index path="/" element={<Landing />} />
 
-      {/* <Route path="home" element={<Homepage />} /> */}
-      <Route path="home" element={<RootLayout />} >
+      <Route element={<RootLayout />} >
+        <Route path="action" element={<ActionPage />} />
+        <Route path="home" element={<Homepage />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
 
