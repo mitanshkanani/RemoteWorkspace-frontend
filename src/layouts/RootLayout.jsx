@@ -3,11 +3,11 @@ import { Outlet } from "react-router-dom"
 
 
 const RootLayout = () => {
-    return (
-        <div>
-            <Outlet />
-        </div>
-    )
-}
+  return (
+    <div>
+      <Outlet />
+    </div>
+  );
+};
 
-export default RootLayout
+export default RootLayout;
